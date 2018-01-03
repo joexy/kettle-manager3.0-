@@ -1,0 +1,14 @@
+config_db_codes = sys,kettle
+
+#sys数据源
+sys_url = jdbc:oracle:thin:@127.0.0.1:1521:mydb
+sys_user = km
+sys_pwd = km
+
+#kettle数据源
+kettle_url = jdbc:oracle:thin:@127.0.0.1:1521:mydb
+kettle_user = kettle
+kettle_pwd = kettle
+
+#默认事务级别配置(MYSQL=4,Oralce=2)
+transaction_level = 2

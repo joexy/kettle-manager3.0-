@@ -1,0 +1,34 @@
+MySQL Server 5.x
+
+This is a release of MySQL, a dual-license SQL database server.
+For the avoidance of doubt, this particular copy of the software 
+is released under a commercial license and the GNU General Public
+License does not apply. MySQL is brought to you by Oracle.
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+This distribution may include materials developed by third
+parties. For license and attribution notices for these
+materials, please refer to the documentation that accompanies
+this distribution (see the "Licenses for Third-Party Components"
+appendix) or view the online documentation at 
+<http://dev.mysql.com/doc/>.
+
+For further information about MySQL or additional documentation, 
+see:
+- The latest information about MySQL: http://www.mysql.com
+- The current MySQL documentation: http://dev.mysql.com/doc
+
+Some Reference Manual sections of special interest:
+- If you are migrating from an older version of MySQL, please 
+  read the "Upgrading from..." section.
+- To see what MySQL can do, take a look at the features section.
+- For installation instructions, see the Installing and Upgrading
+  chapter.
+- For the new features/bugfix history, see the MySQL Change History 
+  appendix.
+
+You can browse the MySQL Reference Manual online or download it 
+in any of several formats at the URL given earlier in this file.
+Source distributions include a local copy of the manual in the
+Docs directory.

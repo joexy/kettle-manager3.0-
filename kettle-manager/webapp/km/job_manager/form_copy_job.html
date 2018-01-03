@@ -1,0 +1,56 @@
+<%layout("/eova/layout/default.html",{'title' : 'Dialog' }){%>
+<script type="text/javascript">
+    $(function(){
+    });
+    var submitNow = function($dialog, $grid, $pjq) {
+        var url = "/km/job_manager/doCopyJob";
+        var params = $('#myForm').formToStr();
+        var w=window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+        var h=window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+
+	    var dialog = window.sy.modalDialog({
+	 		title : '复制结果',
+	 		url : url+"?1=1"+params,
+	 		buttons : [ {
+	 			text : '关闭',
+	 			handler : function() {
+         			dialog.dialog('destroy');
+	 			}
+	 		} ]
+	 	}, w-20, h-20);
+    }
+    var submitForm = function($dialog, $grid, $pjq) {
+        $("#myForm").isValid(function(isValied){
+            if(isValied){
+                submitNow($dialog, $grid, $pjq);
+            }
+        });
+    }
+</script>
+<fieldset>
+    <legend>配置复制规则</legend>
+    <form id="myForm" method="post" class="form" style="padding: 5px;">
+    <input type="hidden" name="row" value='${row!}'>
+    <table class="table" style="width: 100%;">
+        <tr>
+            <th style="width: 120px;">作业路径</th>
+            <td colspan="3">
+            	<#texts id="jobPath" name="jobPath" value="${jobPath!}" isNoN="" placeholder="每行一个作业名称含路径，有几行将复制几个作业,路径和作业名称重复将覆盖原来的作业，不会复制子作业和子转换，如：/test/测试复制作业1" style="width:90%;height:300px;" />
+            </td>
+        </tr>
+    </table>
+    </form>
+    <script type="text/javascript">
+    $(function(){
+        setValidateForm("myForm",{
+            jobPath: {rule: '作业路径:required;'}
+        });
+    });
+    </script>
+</fieldset>
+<%}%>
